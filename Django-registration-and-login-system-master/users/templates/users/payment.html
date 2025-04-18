@@ -293,7 +293,7 @@ h2 {
                 <label for="Expiration-Date"> Expiration Date* </label>
                 <input type="text" id="Expiration-Date" name="Expiration-Date" placeholder="MM/YY" required>
                 </div>
-                <button type="submit" class="btn"><a href="{% url 'users-note' i.id %}">Proceed</a></button>
+                <button type="submit" class="btn">Proceed</button>
                 <div class="next">
                   {% for i in data %}
                   <button><a href="{% url 'users-note' i.id %}">Next </a></button></div>
