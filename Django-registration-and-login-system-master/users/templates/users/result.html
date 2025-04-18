@@ -3,18 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exam Result</title>
     <style>
-
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .result-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        .result-header {
+            margin-bottom: 30px;
+        }
+        .result-header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .result-details {
+            margin-bottom: 30px;
+        }
+        .result-item {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .result-score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+            margin: 20px 0;
+        }
+        .result-score.fail {
+            color: #dc3545;
+        }
+        .result-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #e9ecef;
+        }
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .home-button:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <div class="main">
-        {% for i in data2 %}
-        Your Name : {{i.name}}
-        Your Score : {{i.result}}
-        Your Course : {{i.course}}
-        {% endfor %}
+    <div class="result-card">
+        {% if result %}
+            <div class="result-header">
+                <h1>Exam Result</h1>
+                <p>Thank you for completing the exam!</p>
+            </div>
+            
+            <div class="result-details">
+                <div class="result-item">
+                    <strong>Name:</strong> {{ result.name }}
+                </div>
+                <div class="result-item">
+                    <strong>Course:</strong> {{ result.course }}
+                </div>
+                <div class="result-item">
+                    <strong>Score:</strong> {{ correct_answers }} out of {{ total_questions }}
+                </div>
+                
+                <div class="result-score {% if result.result < 50 %}fail{% endif %}">
+                    {{ result.result|floatformat:1 }}%
+                </div>
+                
+                <div class="result-message">
+                    {% if result.result >= 50 %}
+                        Congratulations! You have passed the exam.
+                    {% else %}
+                        Unfortunately, you did not pass the exam. Required score: 50%
+                    {% endif %}
+                </div>
+            </div>
+            
+            <a href="{% url 'users-home' %}" class="home-button">Return to Home</a>
+        {% else %}
+            <div class="result-message">
+                No result data available.
+            </div>
+            <a href="{% url 'users-home' %}" class="home-button">Return to Home</a>
+        {% endif %}
     </div>
 </body>
 </html>

@@ -64,45 +64,44 @@ def q1(request,id):
 
 def result(request):
     if request.method == "POST":
-        id = request.POST.get('id')
-        # opt1 = request.POST.get('opt1')
-        # opt2 = request.POST.get('opt2')
-        # opt3 = request.POST.get('opt3')
-        # opt4 = request.POST.get('opt4')
-        # opt5 = request.POST.get('opt5')
-        # opt6 = request.POST.get('opt6')
-        # opt7 = request.POST.get('opt7')
-        # opt8 = request.POST.get('opt8')
-        # opt9 = request.POST.get('opt9')
-        # opt10 = request.POST.get('opt10')
-        # opt11 = request.POST.get('opt11')
-        # opt12 = request.POST.get('opt12')
-        # opt13 = request.POST.get('opt13')
-        # opt14 = request.POST.get('opt14')
-        # opt15 = request.POST.get('opt15')
-        data5 = Course.objects.filter(id=id)
-        for i in data5:
-            course = i.Course
         name = request.POST.get('name')
-        data = Exam.objects.all()
+        course_id = request.POST.get('course_id')
+        
+        # Get the course name
+        course = Course.objects.get(id=course_id).Course
+        
+        # Get all exam questions for this course
+        exam_questions = Exam.objects.filter(Course=course_id)
+        
+        # Calculate correct answers
         count = 0
-        c = 1
-        for i in data:
-            c = str(c)
-            if i.answer == request.POST.get('opt'+c):
-                c = int(c)
-                c +=1
-                count +=1
-        result1 = 100*count/15
-        obj = Result(name=name,course=course,result=result1)
-        obj.save()
-    
-        data2=Result.objects.all()[:1]
+        total_questions = len(exam_questions)
+        
+        for i, question in enumerate(exam_questions, 1):
+            user_answer = request.POST.get(f'opt{i}')
+            if user_answer and question.answer == user_answer:
+                count += 1
+        
+        # Calculate percentage
+        result_percentage = (count / total_questions) * 100 if total_questions > 0 else 0
+        
+        # Save result
+        result_obj = Result(
+            name=name,
+            course=course,
+            result=result_percentage
+        )
+        result_obj.save()
+        
+        # Get the current result
         context = {
-            "data2":data2,
+            "result": result_obj,
+            "correct_answers": count,
+            "total_questions": total_questions
         }
-        return render(request,'users/result.html',context)
-    return render(request,'users/result.html')
+        return render(request, 'users/result.html', context)
+    
+    return render(request, 'users/result.html')
 
 class RegisterView(View):
     form_class = RegisterForm

@@ -138,118 +138,42 @@ print(list1)
     <div class="answerbook">
       <form method="POST" action="{% url 'users-result' %}">
         {% csrf_token %}
-        <input type="text" name="name" placeholder="Enter Name For Certificate">
+        <input type="text" name="name" placeholder="Enter Name For Certificate" required>
+        <input type="hidden" name="course_id" value="{{ id }}">
         <div class="options">
-          1) &nbsp&nbsp A <input type="radio" name="opt1" value="A">
-           B <input type="radio" name="opt1" value="B">
-           C <input type="radio" name="opt1" value="C">
-           D <input type="radio" name="opt1" value="D">
+          {% for i in data %}
+          <div class="option-group">
+            {{ forloop.counter }}) &nbsp;&nbsp;
+            A <input type="radio" name="opt{{ forloop.counter }}" value="A" required>
+            B <input type="radio" name="opt{{ forloop.counter }}" value="B" required>
+            C <input type="radio" name="opt{{ forloop.counter }}" value="C" required>
+            D <input type="radio" name="opt{{ forloop.counter }}" value="D" required>
+          </div>
+          {% endfor %}
         </div>
-        <div class="options">
-          2) &nbsp&nbsp A <input type="radio" name="opt2" value="A">
-           B <input type="radio" name="opt2" value="B">
-           C <input type="radio" name="opt2" value="C">
-           D <input type="radio" name="opt2" value="D">
-        </div>
-        <div class="options">
-          3) &nbsp&nbsp A <input type="radio" name="opt3" value="A">
-           B <input type="radio" name="opt3" value="B">
-           C <input type="radio" name="opt3" value="C">
-           D <input type="radio" name="opt3" value="D">
-        </div>
-        <div class="options">
-          4) &nbsp&nbsp A <input type="radio" name="opt4" value="A">
-           B <input type="radio" name="opt4" value="B">
-           C <input type="radio" name="opt4" value="C">
-           D <input type="radio" name="opt4" value="D">
-        </div>
-        <div class="options">
-          5) &nbsp&nbsp A <input type="radio" name="opt5" value="A">
-           B <input type="radio" name="opt5" value="B">
-           C <input type="radio" name="opt5" value="C">
-           D <input type="radio" name="opt5" value="D">
-        </div>
-        <div class="options">
-          6) &nbsp&nbsp A <input type="radio" name="opt6" value="A">
-           B <input type="radio" name="opt6" value="B">
-           C <input type="radio" name="opt6" value="C">
-           D <input type="radio" name="opt6" value="D">
-        </div>
-        <div class="options">
-          7) &nbsp&nbsp A <input type="radio" name="opt7" value="A">
-           B <input type="radio" name="opt7" value="B">
-           C <input type="radio" name="opt7" value="C">
-           D <input type="radio" name="opt7" value="D">
-        </div>
-        <div class="options">
-          8) &nbsp&nbsp A <input type="radio" name="opt8" value="A">
-           B <input type="radio" name="opt8" value="B">
-           C <input type="radio" name="opt8" value="C">
-           D <input type="radio" name="opt8" value="D">
-        </div>
-        <div class="options">
-          9) &nbsp&nbsp A <input type="radio" name="opt9" value="A">
-           B <input type="radio" name="opt9" value="B">
-           C <input type="radio" name="opt9" value="C">
-           D <input type="radio" name="opt9" value="D">
-        </div>
-        <div class="options">
-          10) &nbsp&nbsp A <input type="radio" name="opt10" value="A">
-           B <input type="radio" name="opt10" value="B">
-           C <input type="radio" name="opt10" value="C">
-           D <input type="radio" name="opt10" value="D">
-        </div>
-        <div class="options">
-          11) &nbsp&nbsp A <input type="radio" name="opt11" value="A">
-           B <input type="radio" name="opt11" value="B">
-           C <input type="radio" name="opt11" value="C">
-           D <input type="radio" name="opt11" value="D">
-        </div>
-        <div class="options">
-          12) &nbsp&nbsp A <input type="radio" name="opt12" value="A">
-           B <input type="radio" name="opt12" value="B">
-           C <input type="radio" name="opt12" value="C">
-           D <input type="radio" name="opt12" value="D">
-        </div>
-        <div class="options">
-          13) &nbsp&nbsp A <input type="radio" name="opt13" value="A">
-           B <input type="radio" name="opt13" value="B">
-           C <input type="radio" name="opt13" value="C">
-           D <input type="radio" name="opt13" value="D">
-        </div>
-        <div class="options">
-          14) &nbsp&nbsp A <input type="radio" name="opt14" value="A">
-           B <input type="radio" name="opt14" value="B">
-           C <input type="radio" name="opt14" value="C">
-           D <input type="radio" name="opt14" value="D">
-        </div>
-        <div class="options">
-          15) &nbsp&nbsp A <input type="radio" name="opt15" value="A">
-           B <input type="radio" name="opt15" value="B">
-           C <input type="radio" name="opt15" value="C">
-           D <input type="radio" name="opt15" value="D">
-        </div>
-        <input type="text" value={{id}} name="id">
-        <input type="submit" value="submit">
+        <button type="submit" class="submit-btn">Submit</button>
       </form>
     </div>
   </div>
 </div>
-  <script>
-    var m=15;
-    var s=0;
-    function time()
-    {
-      s--;
-      if(s<0)
-      {
-        s = 59;
-        m = m-1;
-      }
-      document.getElementById("minute").innerHTML=m;
-      document.getElementById("seconds").innerHTML=s;
+<script>
+    var m = 15;
+    var s = 0;
+    function time() {
+        s--;
+        if(s < 0) {
+            s = 59;
+            m = m - 1;
+        }
+        if(m < 0) {
+            // Time's up - auto submit the form
+            document.querySelector('form[action*="result"]').submit();
+            return;
+        }
+        document.getElementById("minute").innerHTML = m;
+        document.getElementById("seconds").innerHTML = s < 10 ? "0" + s : s;
     }
-    setInterval(time(), 1000);
-  </script>
+    setInterval(time, 1000);
+</script>
 </body>
 </html>
