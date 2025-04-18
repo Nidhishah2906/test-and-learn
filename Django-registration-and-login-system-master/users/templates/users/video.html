@@ -1,0 +1,590 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="{% static video.css}">
+    <style>
+      *{
+    margin: 0px;
+    padding: 0px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8e9e8;
+    padding: 10px 20px;
+    color: white;
+    height: 80px;
+  }
+  .navbar .logo img {
+    height: 89px;
+    width: 100px;
+  }
+  .navbar .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+  }
+  .navbar .search-bar input {
+    width: 75%;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 98px;
+  }
+  .navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+  }
+  .navbar .nav-links a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .navbar .nav-links a:hover {
+    background-color: #555;
+  }
+  .navbar .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  .navbar .social-icons a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .registration-form {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    width: 50%;
+  }
+  .form-header {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .btn-submit {
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .btn-submit:hover {
+    background-color: blue;
+  }
+.v1{
+    display: flex;
+    margin: 50px;
+   border-bottom: 1px solid grey;
+}
+.v1 p{
+    margin: 50px;
+}
+.video2-cantian{
+    display: flex;
+    margin: 50px;
+   border-bottom: 1px solid grey;
+}
+.video2-cantian p{
+    margin: 50px;
+}
+.v3-cantian{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v3-cantian p{
+    margin: 50px;
+}
+.v4-catian{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v4-catian p{
+    margin: 50px;
+}
+.v5-catian{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v5-catian p{
+    margin: 50px;
+}
+.v5-catian{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v5-catian p{
+    margin: 50px;
+}
+.v6{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v6 p{
+    margin: 50px;
+}
+.v7{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v7 p{
+    margin: 50px;
+}
+.v8{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v8 p{
+    margin: 50px;
+}
+.v9{
+    display: flex;
+    margin: 50px;
+    
+   border-bottom: 1px solid grey;
+}
+.v9 p{
+    margin: 50px;
+}
+.button button{
+    height: 30px;
+    margin-left: 30px;
+    margin: 30px;
+    margin-bottom: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    background-color: gray;
+    
+  }
+.button button a{
+    text-decoration: none;
+    color: black;
+}
+.footer{
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+ 
+   line-height: 1.5;
+   font-family: "Poppins", sans-serif;
+ }
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ .container {
+   max-width: 1170px;
+   margin: auto;
+ }
+ .row {
+   display: flex;
+   gap: 52px;
+   
+ }
+ ul {
+   list-style: none;
+ }
+ .footer {
+   background-color: #24262b;
+   padding: 70px 0;
+ }
+ .footer-col {
+   width: 25%;
+   padding: 0 15px;
+ }
+ .footer-col h4 {
+   font-size: 18px;
+   color: #ffffff;
+   text-transform: capitalize;
+   margin-bottom: 35px;
+   font-weight: 500;
+   position: relative;
+ }
+ .footer-col h4::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -10px;
+   background-color: #e91e63;
+   height: 2px;
+   box-sizing: border-box;
+   width: 50px;
+ }
+ .footer-col ul li:not(:last-child) {
+   margin-bottom: 10px;
+ }
+ .footer-col ul li a {
+   font-size: 16px;
+   text-transform: capitalize;
+   color: #ffffff;
+   text-decoration: none;
+   font-weight: 300;
+   color: #bbbbbb;
+   display: block;
+   transition: all 0.3s ease;
+   margin: 10px;
+ }
+ .footer-col ul li a:hover {
+   color: #ffffff;
+   padding-left: 8px;
+ }
+ .footer-col .social-links a {
+   display: inline-block;
+   height: 40px;
+   width: 40px;
+   background-color: rgba(255, 255, 255, 0.2);
+   margin: 0 10px 10px 0;
+   text-align: center;
+   line-height: 40px;
+   border-radius: 50%;
+   color: #ffffff;
+   transition: all 0.5s ease;
+ }
+ .footer-col .social-links a:hover {
+   color: #24262b;
+   background-color: #ffffff;
+ }
+ 
+ /*responsive*/
+ @media (max-width: 767px) {
+   .footer-col {
+     width: 50%;
+     margin-bottom: 30px;
+   }
+ }
+ @media (max-width: 574px) {
+   .footer-col {
+     width: 100%;
+   }
+ }
+ 
+</style>
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+          <img src="../../../media/logo-removebg-preview-removebg-preview.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search courses...">
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="demo2.html">Contact Us</a>
+          <a href="log in.html">Log in</a>
+        </div>
+    
+      </header>
+      {% for i in data %}
+      <h1>{{i.Course}}</h1>
+    <div class="video1">
+        <div class="v1">
+    <iframe height="204px" width="300px" src="{{i.chap1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p> Introduction to Python
+         Python Installation (Windows),
+         Python Installation (Mac),
+         VSCode Installation,
+         First Program,
+        Python Character Set,
+         Variables and how to use them,
+         Rules for Identifiers,
+         Data Types,
+         Keywords,
+         Print Sum,
+        Comments in Python,
+         Operators in Python,
+        Type Conversion,
+         Inputs in Python,
+        Let's Practice</p>
+      </div>
+    </div>
+        <div class="video2">
+            <div class="video2-cantian">
+        <iframe height="204px" width="300px" src="{{i.chap2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>Python uses double quotes and escape sequences for creating strings,
+            Concatenating and finding length of strings in Python,
+            String manipulation in Python and understanding string length and indexing,
+            Slicing in Python involves accessing parts of a string and is crucial for dealing with data in machine learning,
+            Explaining string indexing and slicing in Python,
+            Understanding string functions, ends with,
+            Conditional statements are used to execute code based on specific conditions.</p>
+       </div>
+        </div>
+        <div class="video3">
+            <div class="v3-cantian">
+                <iframe height="204px" width="300px" src="{{i.chap3}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p> Difference between Strings and Lists in Python,
+                    List Methods,
+                    tuples in Python,
+                    Difference between Tuples and Lists in Python,
+                    Tuple Slicing,
+                    Tuple Method,
+                    Let's Practice Question 1,2,3
+                    </p>
+            </div>
+        </div>
+        <div class="video4">
+            <div class="v4-catian">
+                <iframe height="204px" width="300px" src="{{i.chap4}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Python allows for mutable and unordered key-value pairs,
+                    Python allows to access, change and assign values,
+                    Using dictionaries to store nested data in Python,
+                    Working with dictionary keys and type casting,
+                    Understanding errors and methods in dictionary operations,
+                    Using methods to modify dictionaries in Python,
+                    Dictionary in Python allows for storing multiple values with unique keys,
+                    Working with dictionaries and sets in Python,
+                    sets in Python ensure unique values and can be created using a specific syntax,
+                    Understanding dictionaries and sets in Python,
+                    Working with dictionaries and sets in Python,
+                     Creating sets in Python for storing pairs and values</p>
+            </div>
+        </div>
+        <div class="vedio5">
+            <div class="v5-catian">
+                <iframe height="204px" width="300px" src="{{i.chap5}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                    Loops in Python help to repeat a set of instructions until a specific condition is met.
+                    Loops are used to execute a set of statements multiple times,
+                    Using loops in Python to print numbers from 1 to 100 and in reverse order,
+                    Printing multiplication table using loops in Python,
+                    Printing multiplication tables and looping through a list in Python,
+                    Using loops to iterate through lists and tuples,
+                    Understanding loops in Python,
+                    Explaining the process of searching in Python using loop,s
+                     Understanding the break keyword in Python loops,
+                    Using loops in Python to search and print a number,
+                       For loops are used for sequential traversal of elements in a sequence,
+                    For loop in Python iterates over a sequence of elements,
+                   Using for loop for iterating through a string,
+                    Using for loops in Python to iterate through elements and track their index,
+                    Using range function to iterate through sequences,
+                     Factorial calculation using For Loop in Python,
+                    Understanding while and for loops in Python.
+                </p>
+            </div>
+        </div>
+        <div class="video6">
+            <div class="v6">
+                <iframe height="204px" width="300px" src="{{i.chap6}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Functions in Python are blocks of code that can be reused,
+                     Functions reduce redundant code and improve reusability,
+                     Understanding function calls and parameters in Python,
+                    Using functions reduces redundancy and makes code more efficient,
+                    Functions in Python can be created with or without parameters and return values,
+                    Functions offer a way to encapsulate code for reuse,
+                    Understanding built-in and user-defined functions in Python,
+                    Understanding default parameter values in Python functions,
+                     Creating functions to print lists with proper formatting,
+                     Understanding functions and recursion in Python,
+                     Introduction to functions and recursion in Python,
+                   Recursion in Python,
+                     Recursion is used to print numbers in a function call,
+                     Explaining recursion in Python with a specific example,
+                    Understanding the call stack in Python,
+                     Recursion creates layers of function calls,
+                    Understanding the concept of recursion and factorial in Python,
+                     Understanding recursion and its application in programming,
+                    
+                    </p>
+            </div>
+        </div>
+        <div class="video7">
+            <div class="v7">
+                <iframe height="204px" width="300px" src="{{i.chap7}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>  RAM is volatile memory and not suitable for permanent storage
+                     Using physical files in day-to-day operations,
+                     Opening a file in read mode returns a text IO wrapper,
+                     Understanding file reading modes,
+                     Reading a file and printing its contents,
+                     Appending data to a file in A mode,
+                     Differences between different modes,
+                    Different file modes in Python: Read Plus, Write Plus, Append Plus,
+                     Using the 'with' syntax in Python automatically closes the file,
+                     We can delete any file by using the remove function in the os module,
+                    Replace Java with Python in a file using the replace method,
+                    Write a function to find the line number of the word 'learning' in a file,
+                     The code checks if a word exists within a given data string and prints the line number if it does,
+                     Extract individual numbers from a string and convert them to integers,
+                    The code splits a string of numbers separated by commas and prints them individually.
+                    Crafted by Merlin AI. 
+                    </p>
+            </div>
+        </div>
+        <div class="video8">
+            <div class="v8">
+                <iframe height="204px" width="300px" src="{{i.chap8}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>
+                    Intro to oops,
+                 Class & objects,
+               Constructors ,
+                Class & instances attributes,
+                Methods,
+                 Revision,
+                 Let's practice,
+                 Static methods,
+                Abstraction & encapsulation,
+                Let's practice,
+                   outro(Next lecture info),
+                </p>
+            </div>
+        </div>
+        <div class="video9">
+            <div class="v9">
+                <iframe height="204px" width="300px" src="{{i.chap9}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p> Part 2 covers inheritance and polymorphism in OOP,
+                     Explaining the concept of private entity in object-oriented programming,
+                     Concept of private and public in Python classes,
+                     Understanding private attributes and methods in classes,
+                     Inheritance in OOP allows properties and methods to be passed from parent to child classes,
+                     Learning about inheritance and the super method in OOP,
+                     Static methods cannot access and modify class state but can be used for utility in Python,
+                     Understanding the impact of class attribute changes on object attributes,
+                     Understanding the three types of functions in OOPS: static methods, class methods, and instance methods,
+                     Calculating percentage of student marks using OOPS,
+                     Automatic updates based on attribute changes,
+                     Understanding Polymorphism and Operator Overloading,
+                     Operator overloading allows operators to have different meanings based on context,
+                     Complex numbers have real and imaginary parts, which are added separately,
+                     Creating a function to add complex numbers,
+                     Operator overloading changes the meaning of operators for a class,
+                     Creating a Circle class and defining constructor and methods,
+                     Creating and using classes in Python with attributes and methods,
+                     Separate logic for different data types in classes,
+                     Last lecture will focus on project-oriented implementation.</p>
+            </div>
+        </div>
+        <div class="video9">
+          <div class="v9">
+              <iframe height="204px" width="300px" src="{{i.chap10}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <p> Part 2 covers inheritance and polymorphism in OOP,
+                   Explaining the concept of private entity in object-oriented programming,
+                   Concept of private and public in Python classes,
+                   Understanding private attributes and methods in classes,
+                   Inheritance in OOP allows properties and methods to be passed from parent to child classes,
+                   Learning about inheritance and the super method in OOP,
+                   Static methods cannot access and modify class state but can be used for utility in Python,
+                   Understanding the impact of class attribute changes on object attributes,
+                   Understanding the three types of functions in OOPS: static methods, class methods, and instance methods,
+                   Calculating percentage of student marks using OOPS,
+                   Automatic updates based on attribute changes,
+                   Understanding Polymorphism and Operator Overloading,
+                   Operator overloading allows operators to have different meanings based on context,
+                   Complex numbers have real and imaginary parts, which are added separately,
+                   Creating a function to add complex numbers,
+                   Operator overloading changes the meaning of operators for a class,
+                   Creating a Circle class and defining constructor and methods,
+                   Creating and using classes in Python with attributes and methods,
+                   Separate logic for different data types in classes,
+                   Last lecture will focus on project-oriented implementation.</p>
+          </div>
+      </div>
+     
+      
+        <div class="button">
+            <button> <a href="{% url 'users-payment' i.id %}">Next</a></button>
+        </div>
+        {% endfor %}
+        <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col">
+                  <h4>About us</h4>
+                  <ul>
+                    <li><a href="#">cutting-edge online testing platform</a></li>
+                    <li><a href="#">assess their skills and earn recognized certifications.</a></li>
+                    <li><a href="#">bridge the gap between learning and career opportunities.</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Our Purpose</h4>
+                  <ul>
+                    <li><a href="#">Offer high-quality programming assessments</a></li>
+                    <li><a href="#">Provide industry-recognized certifications.</a></li>
+                    <li><a href="#">Support learners in their career growth.</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Useful Link</h4>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="demo2.html">Contact Us</a></li>
+        
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>follow us</h4>
+                  <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+</body>
+</html>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=Vb_7pTyrYy09qHr6&amp;list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tto8TS-fJQU?si=XLLwGCpZChaDExCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xwKO_y2gHxQ?si=5zp6eBzMS3uBgDLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xwKO_y2gHxQ?si=WBTxnNKDY24rLAa3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7IWOYhfAcVg?si=_NK8EIFhoCseaBW6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qxPMmW93eDs?si=wYb49kEgBVVf7M0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ORCuz7s5cCY?si=ix-Fiy21VDMZnFj7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dohaSBCKCr0?si=A9PDDrKQkd4FVPFf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Pu5bqySSSS0?si=onqvVG98S-aDSRxN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

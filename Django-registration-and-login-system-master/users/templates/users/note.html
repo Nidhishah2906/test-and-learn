@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exam Instructions</title>
+  <link rel="stylesheet" href="note.css" />
+</head>
+<style>
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .instructions-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    max-width: 700px;
+    width: 90%;
+  }
+  
+  .instructions-container h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .instructions-container ol {
+    font-size: 18px;
+    color: #333;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+  
+  .message {
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .next-btn {
+    text-align: center;
+  }
+  
+  .next-btn button {
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .next-btn button:hover {
+    background-color: gray;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+</style>
+<body>
+  <div class="instructions-container">
+    <h1> Exam Instructions</h1>
+    <ol>
+      <li> You have a total of <strong>15 minutes</strong> to complete <strong>15 questions</strong> (1 minutes per question).</li>
+      <li> You <strong>cannot leave</strong> the exam in between. If you do, your progress will be lost.</li>
+      <li> Opening other windows, tabs, or AI tools like ChatGPT is strictly prohibited.</li>
+      <li> You must score at least <strong>50%</strong> to pass the exam.</li>
+      <li> Skipping questions is not allowed. You must answer each one in sequence.</li>
+    </ol>
+
+    <p class="message"> <strong>Best of Luck!</strong> </p>
+
+    <div class="next-btn">
+      {% for i in data %}
+      <a href="{% url 'users-q1' i.id %}"><button>Next</button></a>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

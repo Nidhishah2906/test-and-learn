@@ -1,0 +1,136 @@
+{% load static%}
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Registration Form</title>  
+    <link rel="stylesheet" href="{% static sing up.css}">  
+</head> 
+<style>body {
+  font-family: Arial, sans-serif;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  height: 800px;
+  background-image: url('../../../media/exam2.webp');
+  background-size: cover;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  width: 400px;
+  margin-top: 20px;
+  height: 860px;
+}
+
+h2 {
+  text-align: center;
+  color: #252525;
+}
+
+label {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-button button {
+  background-color: #252525;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-button button:hover {
+  background-color: #252525;
+}
+</style> 
+<body>  
+
+  <div class="container">  
+        <h2>Registration Form</h2>  
+        <form action="#" method="post">  
+          <div class="name">  
+            <div class="name-one">  
+              <label for="fname"><b>First Name*</b></label>  
+              <input type="text" id="fname" name="firstname" placeholder="Enter First Name">
+            </div>
+  
+            <div class="name-one">  
+              <label for="lname"><b>Last Name*</b></label>  
+              <input type="text" id="lname" name="lastname" placeholder="Enter Last Name" required>  
+            </div>
+          </div>
+  
+          <div class="name">  
+            <div class="name-one">  
+              <label for="email"><b>Email</b></label>  
+              <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+  
+            <div class="name-one">  
+              <label for="mobile"><b>Contact</b></label>  
+              <input type="text" id="mobile" name="mobile" maxlength="10" placeholder="Enter Contact Number" required>  
+            </div>
+          </div>
+
+          <div class="name">  
+              <div class="name-one">  
+                <label for="psw"><b>Password*</b></label>  
+                <input type="password" id="psw" name="password" placeholder="Enter Password">  
+              </div>
+
+              <div class="name-one">  
+                <label for="psw-repeat"><b>Repeat Password*</b></label>  
+                <input type="password" id="psw-repeat" name="psw-repeat" placeholder="Repeat Password"> 
+              </div> 
+          </div>
+
+          <div class="date">  
+            <div class="selectdate">  
+                <label for="seldate"><b>Date*</b></label>
+                <input type="date" id="seldate" name="date" required>
+            </div>
+         
+            <div class="selectetime">  
+                <label for="seltime"><b>Time*</b></label>
+                <input type="time" id="seltime" name="time" required>
+            </div>
+        </div>
+
+          <div class="gender">  
+            <label for="gender"><b>Gender</b></label>  
+            <select id="gender" name="gender" required>  
+                <option value="male">Male</option>  
+                <option value="female">Female</option>  
+                <option value="other">Other</option>  
+            </select>  
+          </div>
+
+          <div class="uploadpdf">  
+            <h2>Upload PDF File</h2>
+            <label for="pdfFile" class="file-label">Choose PDF File:</label>
+            <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required>
+          </div>
+
+          <div class="register-button">
+            <button type="submit">Register</button>  
+        </form>  
+    </div>  
+</body>  
+</html>

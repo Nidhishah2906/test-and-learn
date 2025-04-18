@@ -1,0 +1,479 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static contactus.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #e8e9e8;
+      padding: 10px 20px;
+      color: white;
+      height: 80px;
+    }
+
+    .navbar .logo img {
+      height: 89px;
+      width: 100px;
+    }
+
+    .navbar .search-bar {
+      flex-grow: 1;
+      margin: 0 20px;
+    }
+
+    .navbar .search-bar input {
+      width: 75%;
+      padding: 10px;
+      border-radius: 50px;
+      border: none;
+      margin-left: 98px;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+    }
+
+    .navbar .nav-links a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      background-color: #555;
+    }
+
+    .navbar .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .navbar .social-icons a {
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .registration-form {
+      background-color: #ffffff;
+      padding: 28px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin: 50px auto;
+      width: 50%;
+    }
+
+    .form-header {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .btn-submit {
+      background-color: navy;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: blue;
+    }
+
+    .f5-img {
+      background-image: url('../../../media/e2.jpg');
+      height: 700px;
+      width: 95%;
+      background-size: cover;
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+
+    .f7 {
+      background-color: rgba(128, 128, 128, 0.507);
+      height: 700px;
+      width: 100%;
+      color: whitesmoke;
+    }
+
+    .f2 {
+      padding-top: 40px;
+      font-size: 40px;
+    }
+
+    .f3 {
+      padding-top: 25px;
+      padding-left: 20px;
+      font-size: 25px;
+    }
+
+    .f3 p {
+      margin-left: 100px;
+    }
+
+    .f6 {
+      border-radius: 100%;
+      margin-left: 50px;
+      font-size: 20px;
+      height: 20px;
+      width: 35px;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    .fr {
+      height: 70px;
+      width: 200px;
+      color: whitesmoke;
+      margin-left: 50px;
+    }
+
+    .f8 {
+      border-radius: 100%;
+      margin-left: 50px;
+      font-size: 20px;
+      height: 20px;
+      width: 35px;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    .f9 {
+      height: 70px;
+      width: 200px;
+      color: whitesmoke;
+      margin-left: 50px;
+    }
+
+    .f10 {
+      border-radius: 100%;
+      margin-left: 50px;
+      font-size: 20px;
+      height: 20px;
+      width: 35px;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    .f11 {
+      height: 70px;
+      width: 200px;
+      color: whitesmoke;
+      margin-left: 50px;
+    }
+
+    .f4 {
+      margin-top: 100px;
+      margin-left: 50px;
+    }
+
+    .g1 {
+      display: flex;
+    }
+
+    .g2 {
+      background-color: white;
+      color: black;
+      height: 350px;
+      width: 30%;
+      margin-top: 80px;
+      margin-left: 500px;
+      padding: 10px;
+    }
+
+    .g3 {
+      margin-top: 20px;
+      font-size: 30px;
+      padding-top: 0px;
+      padding-left: 30px;
+      height: 50px;
+      width: 100%;
+
+    }
+
+    .name input {
+      height: 50px;
+      width: 95%;
+      border: none;
+      border-bottom: 1px solid gray;
+      padding-left: 20px;
+    }
+
+    .Email input {
+      height: 50px;
+      width: 95%;
+      border: none;
+      border-bottom: 1px solid gray;
+      padding-left: 20px;
+    }
+
+    .message input {
+      height: 50px;
+      width: 95%;
+      border: none;
+      border-bottom: 1px solid gray;
+      padding-left: 20px;
+    }
+
+    .submit button {
+      height: 30px;
+      margin-left: 30px;
+      margin: 30px;
+      margin-bottom: 80px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: none;
+      background-color: gray;
+    }
+
+    .footer {
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      line-height: 1.5;
+      font-family: "Poppins", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1170px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      gap: 52px;
+
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .footer {
+      background-color: #24262b;
+      padding: 70px 0;
+      margin-top: 20px;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media (max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="../../../media/logo-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search courses...">
+    </div>
+    <div class="nav-links">
+      <a href="{% url 'users-home' %}">Home</a>
+      <a href="{% url 'users-aboutus' %}">About Us</a>
+      <a href="{% url 'users-contactus' %}">Contact Us</a>
+      <a href="{% url 'users-login' %}">Log in</a>
+    </div>
+
+  </header>
+  <div class="f1">
+    <div class="f5-img">
+      <div class="f7">
+        <div class="f2">
+          <center>Contact us</center>
+        </div>
+        <div class="f3">
+          <center>Have questions or need support?</center>
+          <p>Visit our Connect With Us page to reach us via email, phone, or our contact form for quick assistance.</p>
+        </div>
+        <div class="g1">
+          <div class="f4">
+            <div class="f6"><i class="fa-solid fa-phone"></i></div>
+            <div class="fr">
+              <h3>for call</h3>+911234567233
+            </div>
+            <div class="f8"><i class="fa-solid fa-envelope"></i></div>
+            <div class="f9">
+              <h3>for mail id</h3>nisdgi1234@gamil.com
+            </div>
+            <div class="f10"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="f11">
+              <h3>Address </h3>302a Suger Complex,Owatanan,Minnesloa
+            </div>
+          </div>
+          <div class="g2">
+            <div class="g3">Send Message</div>
+            <div class="name"> <input type="text" name="name" placeholder="Name"></div>
+            <div class="Email"><input type="email" name="email" placeholder="Email"></div>
+            <div class="message"><input type="text" name="typeyourmessage" placeholder="Type your Message..."></div>
+            <div class="submit"><button>SEND </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>About us</h4>
+          <ul>
+            <li><a href="#">cutting-edge online testing platform</a></li>
+            <li><a href="#">assess their skills and earn recognized certifications.</a></li>
+            <li><a href="#">bridge the gap between learning and career opportunities.</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Purpose</h4>
+          <ul>
+            <li><a href="#">Offer high-quality programming assessments</a></li>
+            <li><a href="#">Provide industry-recognized certifications.</a></li>
+            <li><a href="#">Support learners in their career growth.</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Useful Link</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="demo2.html">Contact Us</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

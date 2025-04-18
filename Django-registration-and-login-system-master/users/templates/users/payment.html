@@ -1,0 +1,350 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="{% static paymnet.css}">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8e9e8;
+    padding: 10px 20px;
+    color: white;
+    height: 80px;
+  }
+  .navbar .logo img {
+    height: 89px;
+    width: 100px;
+  }
+  .navbar .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+  }
+  .navbar .search-bar input {
+    width: 75%;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 98px;
+  }
+  .navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+  }
+  .navbar .nav-links a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .navbar .nav-links a:hover {
+    background-color: #555;
+  }
+  .navbar .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  .navbar .social-icons a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+  }
+.payment {
+    font-family: Arial, sans-serif;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100VH;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+.paym{
+    background-image: url('../../../media/pay1.jpg');
+    height: 665px;
+    width: 93%;
+   background-size: cover;
+    margin: 50px;
+    
+    
+}
+.payment-container {
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 200px;
+    margin-left: 30%;
+   
+}
+
+
+h2 {
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f6f6d9;
+   margin-top: 50px;
+    color: black;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select {
+    width: 93%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: black;
+}
+.cvv{
+  display: flex;
+  margin-top: 20px;
+
+ }
+ .first{
+  margin-top: 20px;
+ }
+ .card-de{
+  margin-top: 20px;
+ }
+ .card{
+  margin-top: 20px;
+ }
+ button {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  height: 40px;
+  width: 60px;
+  padding: 10PX;
+  margin-top: 10px;
+ border-radius: 10px;
+ }
+ button a{
+  background-color: black;
+  text-decoration: none;
+  color: white;
+ }
+ .footer{
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+ 
+   line-height: 1.5;
+   font-family: "Poppins", sans-serif;
+ }
+
+ .container {
+   max-width: 1170px;
+   margin: auto;
+ }
+ .row {
+   display: flex;
+   gap: 52px;
+   
+ }
+ ul {
+   list-style: none;
+ }
+ .footer {
+   background-color: #24262b;
+   padding: 70px 0;
+ }
+ .footer-col {
+   width: 25%;
+   padding: 0 15px;
+ }
+ .footer-col h4 {
+   font-size: 18px;
+   color: #ffffff;
+   text-transform: capitalize;
+   margin-bottom: 35px;
+   font-weight: 500;
+   position: relative;
+ }
+ .footer-col h4::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -10px;
+   background-color: #e91e63;
+   height: 2px;
+   box-sizing: border-box;
+   width: 50px;
+ }
+ .footer-col ul li:not(:last-child) {
+   margin-bottom: 10px;
+ }
+ .footer-col ul li a {
+   font-size: 16px;
+   text-transform: capitalize;
+   color: #ffffff;
+   text-decoration: none;
+   font-weight: 300;
+   color: #bbbbbb;
+   display: block;
+   transition: all 0.3s ease;
+   margin: 10px;
+ }
+ .footer-col ul li a:hover {
+   color: #ffffff;
+   padding-left: 8px;
+ }
+ .footer-col .social-links a {
+   display: inline-block;
+   height: 40px;
+   width: 40px;
+   background-color: rgba(255, 255, 255, 0.2);
+   margin: 0 10px 10px 0;
+   text-align: center;
+   line-height: 40px;
+   border-radius: 50%;
+   color: #ffffff;
+   transition: all 0.5s ease;
+ }
+ .footer-col .social-links a:hover {
+   color: #24262b;
+   background-color: #ffffff;
+ }
+ 
+ /*responsive*/
+ @media (max-width: 767px) {
+   .footer-col {
+     width: 50%;
+     margin-bottom: 30px;
+   }
+ }
+ @media (max-width: 574px) {
+   .footer-col {
+     width: 100%;
+   }
+ }
+ 
+</style>
+<body>
+    <header class="navbar">
+        <div class="logo">
+          <img src="../../../media/logo-removebg-preview-removebg-preview.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search courses...">
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="demo2.html">Contact Us</a>
+          <a href="log in.html">Log in</a>
+        </div>
+    
+      </header>
+      <div class="payment">
+    <div class="paym">
+  
+       
+    <div class="payment-container">
+        <h2>Select Payment Method</h2>
+        <form>
+            <div class="input-group">
+                <label for="username"> Username* </label>
+                <input type="text" id="first" name="first" placeholder="Enter your Username" required>
+                <div class="first">
+                <label for="password"> Password* </label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+              </div>
+              <div class="card-de">
+                <label for="card-name"> Card Holder Name* </label>
+                <input type="card-name" name="card-name" placeholder="Enter Card Holder Name"></div>
+                <div class="card">
+                <label for="payment-method"> Card Detiles*</label>
+                <input type="text" id="card" name="card" placeholder="1234 5678 5613" required></div>
+                <div class="cvv">
+                <label for="cvvnumber"> CVV* </label>
+                <input type="number" id="cvv" name="cvv" placeholder="XXX" required>
+                <label for="Expiration-Date"> Expiration Date* </label>
+                <input type="text" id="Expiration-Date" name="Expiration-Date" placeholder="MM/YY" required>
+                </div>
+                <button type="submit" class="btn">Proceed</button>
+                <div class="next">
+                  {% for i in data %}
+                  <button><a href="{% url 'users-note' i.id %}">Next </a></button></div>
+                  {% endfor %}
+            </div>
+            
+            
+        </form>
+    </div>
+</div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>About us</h4>
+        <ul>
+          <li><a href="#">cutting-edge online testing platform</a></li>
+          <li><a href="#">assess their skills and earn recognized certifications.</a></li>
+          <li><a href="#">bridge the gap between learning and career opportunities.</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Purpose</h4>
+        <ul>
+          <li><a href="#">Offer high-quality programming assessments</a></li>
+          <li><a href="#">Provide industry-recognized certifications.</a></li>
+          <li><a href="#">Support learners in their career growth.</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Useful Link</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="demo2.html">Contact Us</a></li>
+
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

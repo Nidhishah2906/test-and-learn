@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python MCQ Topics</title>
+  <link rel="stylesheet" href="q3-py.css" />
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .main{
+    display: flex;
+    width:100%;
+  }
+  .answer{
+    height:700px;
+    width:35%;
+    position: fixed;
+    background: #c6c6c6;
+    right:0;
+    top:0;
+    padding-top:30px;
+  }
+  .answerbook{
+    padding-left:32%;
+  }
+  .answerbook input{
+    margin-top: 10px;
+  }
+  .options{
+    margin-top:10px;
+  }
+  .container {
+    width:60%;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: absolute;
+    left:0;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .question {
+    margin-bottom: 30px;
+    background-color: #cccdc6;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+  
+  .next {
+    text-align: center;
+  }
+  
+  .next button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .next button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .timer {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+</style>
+<body>
+  <div class="main">
+  <div class="container">
+    
+    <!-- <h1>Python Questions</h1> -->
+
+    
+
+    <form>
+      {% for i in data %}
+    <div class="question">
+      <h2>Question</h2>
+      <p>Q = {{i.Question}}</p>
+      <!-- <pre>
+list1 = [1, 2, 3]
+list2 = list1
+list2.append(4)
+print(list1)
+      </pre> -->
+     
+        <p>A = {{i.opt1}}</p>
+        <p>B = {{i.opt2}}</p>
+        <p>C = {{i.opt3}}</p>
+        <p>D = {{i.opt4}}</p>
+      
+    </div>
+    {% endfor %}
+  </form>
+  
+    <div class="next">
+      <button><a href="">Next</a></button>
+    </div>
+  </div>
+  <div class="answer">
+    <div class="timer">Time Left: <span id="minute">15</span>:<span id="seconds">00</span></div>
+    <div class="answerbook">
+      <form method="POST" action="{% url 'users-result' %}">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Enter Name For Certificate">
+        <div class="options">
+          1) &nbsp&nbsp A <input type="radio" name="opt1" value="A">
+           B <input type="radio" name="opt1" value="B">
+           C <input type="radio" name="opt1" value="C">
+           D <input type="radio" name="opt1" value="D">
+        </div>
+        <div class="options">
+          2) &nbsp&nbsp A <input type="radio" name="opt2" value="A">
+           B <input type="radio" name="opt2" value="B">
+           C <input type="radio" name="opt2" value="C">
+           D <input type="radio" name="opt2" value="D">
+        </div>
+        <div class="options">
+          3) &nbsp&nbsp A <input type="radio" name="opt3" value="A">
+           B <input type="radio" name="opt3" value="B">
+           C <input type="radio" name="opt3" value="C">
+           D <input type="radio" name="opt3" value="D">
+        </div>
+        <div class="options">
+          4) &nbsp&nbsp A <input type="radio" name="opt4" value="A">
+           B <input type="radio" name="opt4" value="B">
+           C <input type="radio" name="opt4" value="C">
+           D <input type="radio" name="opt4" value="D">
+        </div>
+        <div class="options">
+          5) &nbsp&nbsp A <input type="radio" name="opt5" value="A">
+           B <input type="radio" name="opt5" value="B">
+           C <input type="radio" name="opt5" value="C">
+           D <input type="radio" name="opt5" value="D">
+        </div>
+        <div class="options">
+          6) &nbsp&nbsp A <input type="radio" name="opt6" value="A">
+           B <input type="radio" name="opt6" value="B">
+           C <input type="radio" name="opt6" value="C">
+           D <input type="radio" name="opt6" value="D">
+        </div>
+        <div class="options">
+          7) &nbsp&nbsp A <input type="radio" name="opt7" value="A">
+           B <input type="radio" name="opt7" value="B">
+           C <input type="radio" name="opt7" value="C">
+           D <input type="radio" name="opt7" value="D">
+        </div>
+        <div class="options">
+          8) &nbsp&nbsp A <input type="radio" name="opt8" value="A">
+           B <input type="radio" name="opt8" value="B">
+           C <input type="radio" name="opt8" value="C">
+           D <input type="radio" name="opt8" value="D">
+        </div>
+        <div class="options">
+          9) &nbsp&nbsp A <input type="radio" name="opt9" value="A">
+           B <input type="radio" name="opt9" value="B">
+           C <input type="radio" name="opt9" value="C">
+           D <input type="radio" name="opt9" value="D">
+        </div>
+        <div class="options">
+          10) &nbsp&nbsp A <input type="radio" name="opt10" value="A">
+           B <input type="radio" name="opt10" value="B">
+           C <input type="radio" name="opt10" value="C">
+           D <input type="radio" name="opt10" value="D">
+        </div>
+        <div class="options">
+          11) &nbsp&nbsp A <input type="radio" name="opt11" value="A">
+           B <input type="radio" name="opt11" value="B">
+           C <input type="radio" name="opt11" value="C">
+           D <input type="radio" name="opt11" value="D">
+        </div>
+        <div class="options">
+          12) &nbsp&nbsp A <input type="radio" name="opt12" value="A">
+           B <input type="radio" name="opt12" value="B">
+           C <input type="radio" name="opt12" value="C">
+           D <input type="radio" name="opt12" value="D">
+        </div>
+        <div class="options">
+          13) &nbsp&nbsp A <input type="radio" name="opt13" value="A">
+           B <input type="radio" name="opt13" value="B">
+           C <input type="radio" name="opt13" value="C">
+           D <input type="radio" name="opt13" value="D">
+        </div>
+        <div class="options">
+          14) &nbsp&nbsp A <input type="radio" name="opt14" value="A">
+           B <input type="radio" name="opt14" value="B">
+           C <input type="radio" name="opt14" value="C">
+           D <input type="radio" name="opt14" value="D">
+        </div>
+        <div class="options">
+          15) &nbsp&nbsp A <input type="radio" name="opt15" value="A">
+           B <input type="radio" name="opt15" value="B">
+           C <input type="radio" name="opt15" value="C">
+           D <input type="radio" name="opt15" value="D">
+        </div>
+        <input type="text" value={{id}} name="id">
+        <input type="submit" value="submit">
+      </form>
+    </div>
+  </div>
+</div>
+  <script>
+    var m=15;
+    var s=0;
+    function time()
+    {
+      s--;
+      if(s<0)
+      {
+        s = 59;
+        m = m-1;
+      }
+      document.getElementById("minute").innerHTML=m;
+      document.getElementById("seconds").innerHTML=s;
+    }
+    setInterval(time(), 1000);
+  </script>
+</body>
+</html>

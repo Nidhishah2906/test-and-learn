@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  margin: 0;
+  background-image: url('exam2.webp');
+  background-size: cover;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  width: 500px;
+}
+
+h2 {
+  text-align: center;
+  color: #252525;
+}
+
+label {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-button button {
+  background-color: #252525;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-button button:hover {
+  background-color: #252525;
+}

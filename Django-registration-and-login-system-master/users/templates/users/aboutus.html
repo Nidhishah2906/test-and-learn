@@ -1,0 +1,316 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static a1.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e8e9e8;
+  padding: 10px 20px;
+  color: white;
+  height: 80px;
+}
+.navbar .logo img {
+  height: 89px;
+  width: 100px;
+}
+.navbar .search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+.navbar .search-bar input {
+  width: 75%;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  margin-left: 98px;
+}
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+.navbar .nav-links a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.navbar .nav-links a:hover {
+  background-color: #555;
+}
+.navbar .social-icons {
+  display: flex;
+  gap: 10px;
+}
+.navbar .social-icons a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.img-front {
+    background-image: url('../../../media/e1.jpg');
+    height: 500px;
+    width: 94%;
+    margin-left: 60px;
+    margin-top: 20px;
+    background-size: cover;
+}
+.a3{
+    background-color: rgba(128, 128, 128, 0.462);
+    height: 500px;
+    width: 100%;
+}
+.a1{
+    font-size: 35px;
+    color: white;
+    padding-top: 225px;
+}
+.a2{
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+    padding-top: 20px;
+}
+.d1{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+.w1 img{
+    height: 500px;
+    width: 85%;
+    margin: 30px 50px;
+    border-radius: 20px;
+}
+.d2{
+   border-radius: 20px;
+    font-size: 20px;
+    background-color: whitesmoke;
+   margin: 30px;
+   padding: 20px;
+}
+
+.mn1{
+    display: flex;
+    padding-left: 3px;
+    padding-top: 20px;
+}
+.mn2{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 3px;
+}
+.d7{
+    padding-left: 70px;
+}
+.d8{
+    padding-right: 10px;
+}
+
+.d5{
+    padding-left: 10px;
+}
+
+.footer{
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+.row {
+  display: flex;
+  gap: 65px;
+  
+}
+ul {
+  list-style: none;
+}
+.footer {
+  background-color: #24262b;
+  padding: 70px 0;
+}
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+    </style>
+    <body>
+        <header class="navbar">
+            <div class="logo">
+              <img src="../../../media/logo-removebg-preview.png" alt="Logo">
+            </div>
+            <div class="search-bar">
+              <input type="text" placeholder="Search courses...">
+            </div>
+            <div class="nav-links">
+              <a href="{% url 'users-home' %}">Home</a>
+              <a href="{% url 'users-aboutus' %}">About Us</a>
+              <a href="{% url 'users-contactus' %}">Contact Us</a>
+              <a href="{% url 'users-login' %}">Log in</a>
+            </div>
+           
+          </header>
+        </div>
+        <div class="fornt">
+            <div class="a123"> 
+                <div class="img-front">
+                    <div class="a3"> 
+                    <div class="a1"><center>About us</center></div>
+                    <div class="a2"><p>The purpose of our website is to provide a seamless platform for online skill testing and certification, helping users validate their expertise and enhance career opportunities. We aim to offer accurate, secure, and industry-recognized assessments for learners and professionals. Our goal is to make skill-based certification accessible, affordable, and globally recognized.</p></div></div>
+                </div></div>
+                 <div class="d1">
+                  <div class="w1"><img src="../../../media/e2.jpg"="alt"></div>
+                   <div class="d2"><center>Why they choose us?</center>
+                    <div class="mn1">
+                    <div class="d3"> <i class="fa-solid fa-user-group"></i><h3><b> Unique Certificates</b></h3>
+                        Each certificate has a unique ID, allowing employers to verify authenticity.</div>
+                    <div class="d4"><i class="fa-solid fa-certificate"></i><h3><b>Results & Certification</b></h3>Get immediate test results and downloadable certificates after passing.</div>
+                    <div class="d5"><i class="fa-solid fa-layer-group"></i><h3><b>Diverse Skill Categories</b></h3>
+                        Tests cover various subjects, from programming to business and soft skills.</div></div>
+                    <div class="mn2">
+                    <div class="d6"><i class="fa-solid fa-square-poll-vertical"></i><h3><b>Continuous Improvement</b></h3>We update our tests regularly to stay relevant to industry trends.</div>
+                    <div class="d7"><i class="fa-solid fa-grip"></i><h3><b>Affordable & Accessible</b></h3>We offer cost-effective certification options, making skill validation available.</div>
+                    <div class="d8"><i class="fa-solid fa-file-shield"></i><h3><b>Secure & Reliable Testing </b></h3>We use encryption and security measures to protect user data and test integrity.</div></div>
+                   
+                </div>
+                </div>
+            </div>
+            
+
+
+            <footer class="footer">
+                <div class="container">
+                  <div class="row">
+                    <div class="footer-col">
+                      <h4>About us</h4>
+                      <ul>
+                        <li><a href="#">cutting-edge online testing platform</a></li>
+                        <li><a href="#">assess their skills and earn recognized certifications.</a></li>
+                        <li><a href="#">bridge the gap between learning and career opportunities.</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                      </ul>
+                    </div>
+                    <div class="footer-col">
+                      <h4>Our Purpose</h4>
+                      <ul>
+                        <li><a href="#">Offer high-quality programming assessments</a></li>
+                        <li><a href="#">Provide industry-recognized certifications.</a></li>
+                        <li><a href="#">Support learners in their career growth.</a></li>
+                      </ul>
+                    </div>
+                    <div class="footer-col">
+                      <h4>Useful Link</h4>
+                      <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="demo2.html">Contact Us</a></li>
+                        
+                      </ul>
+                    </div>
+                    <div class="footer-col">
+                      <h4>follow us</h4>
+                      <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+               </body>
+               </html>
+                
+        
+      
